@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Test Order</h2>
+
+  <input placeholder="Patient Name" [(ngModel)]="order.patientName" name="patientName">
+  <input placeholder="Phone" [(ngModel)]="order.phone" name="phone">
+
+  <select [(ngModel)]="order.test" name="test">
+    <option [ngValue]="null" disabled>Select Test</option>
+    <option *ngFor="let t of tests" [ngValue]="t">{{t.name}}</option>
+  </select>
+
+  <button (click)="createOrder()">Create Order</button>
+
+  <hr>
+  <h3>Today's Orders</h3>
+  <ul>
+    <li *ngFor="let o of orders">
+      {{o.orderNumber}} - {{o.patientName}} - {{o.test?.name}} - <strong>{{o.status}}</strong>
+    </li>
+  </ul>
+</div>

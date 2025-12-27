@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Test Master</h2>
+
+  <input placeholder="Test Name" [(ngModel)]="test.name" name="testName">
+  <input placeholder="Code" [(ngModel)]="test.code" name="code">
+  <input placeholder="Sample Type" [(ngModel)]="test.sampleType" name="sampleType">
+  <input placeholder="Normal Range" [(ngModel)]="test.normalRange" name="normalRange">
+  <input placeholder="Price" [(ngModel)]="test.price" name="price" type="number">
+
+  <button (click)="addTest()">Add Test</button>
+
+  <hr>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Sample</th>
+        <th>Range</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tests">
+        <td>{{t.name}}</td>
+        <td>{{t.code}}</td>
+        <td>{{t.sampleType}}</td>
+        <td>{{t.normalRange}}</td>
+        <td>{{t.price | currency:'INR'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

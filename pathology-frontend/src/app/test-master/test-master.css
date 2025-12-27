@@ -1,0 +1,5 @@
+.container { padding: 20px; }
+input { display: block; margin: 6px 0; padding: 8px; width: 100%; }
+button { padding: 8px; margin: 10px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ccc; padding: 8px; }

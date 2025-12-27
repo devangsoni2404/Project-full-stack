@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Result Entry</h2>
+
+  <label>Select Pending Order:</label>
+  <select [(ngModel)]="selectedOrder" name="orderSelect">
+    <option [ngValue]="null">-- Select Order --</option>
+    <option *ngFor="let o of orders" [ngValue]="o">
+      {{o.orderNumber}} - {{o.patientName}} ({{o.status}})
+    </option>
+  </select>
+
+  <div *ngIf="selectedOrder">
+    <hr>
+    <h3>Entering Results for: {{selectedOrder.orderNumber}}</h3>
+    
+    <input placeholder="Result Value (e.g., 95 mg/dL)" 
+           [(ngModel)]="result.resultValue" name="val">
+           
+    <textarea placeholder="Technician Notes" 
+              [(ngModel)]="result.technicianNotes" name="notes"></textarea>
+
+    <button (click)="submitResult()">Complete & Mark as Finished</button>
+  </div>
+</div>
